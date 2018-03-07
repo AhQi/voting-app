@@ -7,7 +7,7 @@ var Polls = require('../models/polls.js');
 function pollHandler () {
 
 	this.getAllPolls = function (req, res) {
-		
+		console.log(req.headers.origin);
 		Polls
 			.find({}, { 'owner': false })
 			.exec(function (err, result) {
