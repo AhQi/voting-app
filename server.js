@@ -4,8 +4,8 @@ var express = require('express'),
 	routes = require('./app/routes/index.js'),
 	mongoose = require('mongoose'),
 	passport = require('passport'),
-	session = require('express-session'),
-	cors = require('cors');
+	session = require('express-session');
+	
 	
 var bodyParser = require('body-parser')
 var flash = require('connect-flash');
