@@ -13,7 +13,7 @@ var app = express();
 
 
 
-require('dotenv').load();
+
 require('./app/config/passport')(passport);
 
 
