@@ -48,7 +48,7 @@ app.use(flash());
 
 routes(app, passport);
 
-var port = 8080;
+var port = (process.env.PORT || 5000);
 app.listen(port, function () {
 	console.log('Node.js listening on port ' + port + '...');
 });
