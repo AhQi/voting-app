@@ -19,24 +19,6 @@ module.exports = function (app, passport) {
 	var clickHandler = new ClickHandler();
 	var pollHandler = new PollHandler();
 
-	app.route('/')
-		.get(isLoggedIn, function (req, res) {
-			res.sendFile(path + '/public/index.html');
-		});
-	app.route('/home')
-		.get(isLoggedIn,function (req, res) {
-			console.log('succ');
-			res.send('suio');
-		});
-	app.route('/login')
-		.get(function (req, res) {
-			res.sendFile(path + '/public/login.html');
-		});
-	app.route('/islogged')
-		.get(isLoggedIn,function (req, res) {
-			console.log(res);
-			res.send('logged');
-		});
 		
 	app.route('/logout')
 		.get(function (req, res) {
@@ -117,13 +99,5 @@ module.exports = function (app, passport) {
 		.post(isLoggedIn, pollHandler.addPoll)
 
 		
-	app.route('/api/:id/polls')
-		.get(isLoggedIn, pollHandler.getAllPolls)
-		.post(isLoggedIn, pollHandler.addPoll)
-		.delete(isLoggedIn, clickHandler.resetClicks);
-		
-	app.route('/api/:id/clicks')
-		.get(isLoggedIn, clickHandler.getClicks)
-		.post(isLoggedIn, clickHandler.addClick)
-		.delete(isLoggedIn, clickHandler.resetClicks);
+	
 };
